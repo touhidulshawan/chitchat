@@ -30,11 +30,21 @@ const Chat = () => {
     messages &&
     messages.map((msg) => <ChatMessage key={msg.id} message={msg} />);
   return (
-    <div>
-      <h1>Chat</h1>
-      {renderMessages}
-      <ChatBox messageRef={messagesRef} />
-      <Button action={handleLogout} name="Log Out" />
+    <div className="">
+      <div className="flex justify-end">
+        <Button
+          classes="py-3 px-4 rounded-lg uppercase mt-2 mr-2 text-red-600 focus:ring-red-600"
+          action={handleLogout}
+          name="Log Out"
+        />
+      </div>
+      <div
+        className="py-4 px-2 relative h-screen md:w-8/12 md:flex md:flex-col md:justify-between md:m-auto md:border-4 md:border-gray-800 md:h-auto md:rounded-md"
+        style={{ height: "600px" }}
+      >
+        {renderMessages}
+        <ChatBox messageRef={messagesRef} />
+      </div>
     </div>
   );
 };
