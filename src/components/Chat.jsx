@@ -39,12 +39,12 @@ const Chat = () => {
         />
       </div>
       <div
-        style={{ minHeight: "480px" }}
+        style={{ height: "480px" }}
         className="w-full md:flex md:flex-col md:items-center "
       >
         <div
-          className="py-4 px-2 md:w-6/12 md:m-auto md:border-4 md:border-gray-800 md:rounded-xl"
-          style={{ minHeight: "480px" }}
+          className="py-4 px-2 md:w-6/12 md:m-auto md:border-4 md:border-gray-800 md:rounded-xl overflow-y-scroll"
+          style={{ height: "480px" }}
         >
           {renderMessages}
         </div>
