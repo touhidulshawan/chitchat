@@ -30,7 +30,7 @@ const Chat = () => {
     messages &&
     messages.map((msg) => <ChatMessage key={msg.id} message={msg} />);
   return (
-    <div className="">
+    <div className="md:w-12/12 m-auto">
       <div className="flex justify-end">
         <Button
           classes="py-3 px-4 rounded-lg uppercase mt-2 mr-2 text-red-600 focus:ring-red-600"
@@ -39,10 +39,15 @@ const Chat = () => {
         />
       </div>
       <div
-        className="py-4 px-2 relative h-screen md:w-8/12 md:flex md:flex-col md:justify-between md:m-auto md:border-4 md:border-gray-800 md:h-auto md:rounded-md"
-        style={{ height: "600px" }}
+        style={{ minHeight: "480px" }}
+        className="w-full md:flex md:flex-col md:items-center "
       >
-        {renderMessages}
+        <div
+          className="py-4 px-2 md:w-6/12 md:m-auto md:border-4 md:border-gray-800 md:rounded-xl"
+          style={{ minHeight: "480px" }}
+        >
+          {renderMessages}
+        </div>
         <ChatBox messageRef={messagesRef} />
       </div>
     </div>
