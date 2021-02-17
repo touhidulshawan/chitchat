@@ -1,7 +1,7 @@
 import { useAuth } from "../context/useAuthContext";
 
 const ChatMessage = (props) => {
-  const { uid, messageText, createTime, photoURL } = props.message;
+  const { uid, messageText, photoURL } = props.message;
   const { currentUser } = useAuth();
   const messageClass = uid === currentUser.uid ? "sent" : "received";
   return (
